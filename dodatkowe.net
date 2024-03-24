@@ -1,0 +1,36 @@
+* C:\users\michal\Desktop\Geiger\projekt\dodatkowe.asc
+V1 N001 0 400
+R1 N003 N002 5.1Meg
+I1 N003 N005 PULSE(0 5 10m 1u 1u 5u 50m) load
+R2 N002 N001 100k
+C1 N002 0 10n
+R4 N009 0 100k
+C2 N005 0 330p
+Q1 N007 N009 0 0 BC108B
+R5 N004 N007 100k
+V2 N004 0 5V
+C3 N007 0 100n
+Q2 N006 N007 0 0 BC108B
+R8 N004 N006 10k
+R3 N005 N009 10k
+V3 N011 0 5V
+Q3 N013 N012 N011 0 BC178B
+D1 N014 0 L1C1-DRD1000000000
+R6 N012 0 22k
+V4 N010 0 PULSE(8.4 5 0 100m 1m 0 100m)
+R7 N010 N012 12k
+R9 N013 N014 470
+Q10 WYJSCIE N006 N008 0 BC108B
+R13 N004 WYJSCIE 1k
+R14 N008 0 100
+C4 WYJSCIE N012 100n
+.model D D
+.lib C:\users\michal\AppData\Local\LTspice\lib\cmp\standard.dio
+.model NPN NPN
+.model PNP PNP
+.lib C:\users\michal\AppData\Local\LTspice\lib\cmp\standard.bjt
+.tran 0 200m 0 startup
+* Ukad detekcji impulsow
+* Wskaznik rozladowania baterii
+.backanno
+.end
